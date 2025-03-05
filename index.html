@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>donut</title>
+    <meta name="viewport" content="width=device-width*2, initial-scale=1">
+    <script src="donut.js"></script>
+
+</head>
+
+<body class="site">
+<h1>donut !!!!!!!</h1>
+
+<p><button onclick="anim1();">toggle animation</button></p>
+<p><button onclick="toggleMusic();">toggle music</button></p>
+<p>
+    background color: <input type="color" id="bgColor" value="#000000">
+    donut color: <input type="color" id="textColor" value="#ffffff">
+    font size: <input type="number" id="fontSize" value="10" min="0">pt<br>
+    bold: <input type="checkbox" id="boldCheckbox">
+    <button onclick="changeColors();">apply changes</button>
+</p>
+
+<pre id="d" style="background-color:#000; color:#ffffff; font-size: 10pt;">
+</pre>
+
+<!-- Add audio element -->
+<audio id="backgroundMusic" src="donut.mp3" loop></audio>
+
+
+<script>
+function changeColors() {
+    var bgColor = document.getElementById('bgColor').value;
+    var textColor = document.getElementById('textColor').value;
+    var fontSize = document.getElementById('fontSize').value;
+    var bold = document.getElementById('boldCheckbox').checked;
+    var preElement = document.getElementById('d');
+    preElement.style.backgroundColor = bgColor;
+    preElement.style.color = textColor;
+    preElement.style.fontSize = fontSize + 'pt';
+    preElement.style.fontWeight = bold ? 'bold' : 'normal';
+}
+
+// Add toggleMusic function
+function toggleMusic() {
+    var music = document.getElementById('backgroundMusic');
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
+}
+</script>
+
+</body>
+</html>

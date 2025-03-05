@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>donut</title>
+</head>
+
+<body class="site">
+<h1>donut !!!!!!!</h1>
+
+<p><button onclick="if (!window.__cfRLUnblockHandlers) return false; anim1();">toggle animation</button></p>
+<p><button onclick="if (!window.__cfRLUnblockHandlers) return false; toggleMusic();">toggle music</button></p>
+    background color: <input type="color" id="bgColor" value="#000000">
+    donut color: <input type="color" id="textColor" value="#ffffff">
+    font size: <input type="number" id="fontSize" value="10" min="0">pt<br>
+    bold: <input type="checkbox" id="boldCheckbox">
+     <button onclick="changeColors();">apply changes</button>
+</p>
+    
+<pre id="d" style="background-color:#000; color:#ffffff; font-size: 10pt;">
+                                                                                  
+                               @@@$$$$$$@@@@                                
+                           $$$$#############$$$$                            
+                        #####***!*!!!!!!*****###$$#                         
+                      ####**!!!!!!!====!!!!!!***#####                       
+                     ##****!!!==;;::::::;;==!!!!***##*                      
+                     ****!!!==;;:~-,,,,,--~::;==!!******                     
+                    ****!!!==::~-.........,-~:;==!!*****!                    
+                    =!**!!!==;:-,............,~:;==!!****!                    
+                    !!**!!!==;~-,..        ..,-:;==!!****!=                   
+                    =!!*!!!!=;:~,.          .,~;==!!!!*!!!=                   
+                   ;!!!***!!!!=;~          ~:;;==!!!!!!!!;                   
+                   ;=!!********!!=        ;=!!*!!***!!!!=;                   
+                   :=!!!***#########**!**##*********!!!=;~                   
+                    :=!!****###$$$@@@@$$$$$$####***!!!=;:                    
+                    :;!!****###$$$@@@@@$$$$###**!!!!=;~                     
+                      ~;=!!!***####$$$$$$####**!!!!=;:~                      
+                      -~;=!!*******####******!!!=;:~,                       
+                        -~:==!!!*!****!**!!!!==;:~.                         
+                            ,~~:;;;=======;;;:~-.                            
+                               ..,--------,,.                                
+</pre>
+
+<!-- Add audio element -->
+<audio id="backgroundMusic" src="donut.mp3" loop=""></audio>
+
+    
+<script type="text/javascript">
+function changeColors() {
+    var bgColor = document.getElementById('bgColor').value;
+    var textColor = document.getElementById('textColor').value;
+    var fontSize = document.getElementById('fontSize').value;
+    var bold = document.getElementById('boldCheckbox').checked;
+    var preElement = document.getElementById('d');
+    preElement.style.backgroundColor = bgColor;
+    preElement.style.color = textColor;
+    preElement.style.fontSize = fontSize + 'pt';
+    preElement.style.fontWeight = bold ? 'bold' : 'normal';
+}
+
+// Add toggleMusic function
+function toggleMusic() {
+    var music = document.getElementById('backgroundMusic');
+    if (music.paused) {
+        music.play();
+    } else {
+        music.pause();
+    }
+}
+</script>
+    
+</body>
+</html>
